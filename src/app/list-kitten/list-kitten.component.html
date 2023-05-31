@@ -1,0 +1,21 @@
+<div id="main-view">
+  <app-create-kitten
+    (sendNewKitty)="onReceiveNewKitty($event)"
+  ></app-create-kitten>
+
+  <div *ngFor="let kitty of kittenList" id="kittyCard">
+    <img [src]="kitty.photoLink" alt="Kitty photo" (mouseenter)="this.kitty.onMouseEnter()" (mouseleave)="this.kitty.onMouseLeave()"/>
+    <div id="kittyDetails">
+        <button type="button" (click)="adoptKitty(this.kitty)">
+          Adopt the kitty !
+        </button>
+      <ul [ngClass]="{'hidden' : this.kitty.hideDetails}">
+        <li>Name : {{ kitty.name }}</li>
+        <li>Race : {{ kitty.race }}</li>
+        <li>Date of Birth : {{ kitty.birthDate }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<app-user-kitten [newUserKitty]="adoptingKitty"></app-user-kitten>

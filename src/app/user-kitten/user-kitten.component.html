@@ -1,0 +1,8 @@
+<div *ngFor="let userKitty of userKittenList" id="userKittyCard">
+    <img [src]="userKitty.photoLink" alt="Kitty photo" (mouseenter)="this.userKitty.onMouseEnter()" (mouseleave)="this.userKitty.onMouseLeave()">
+    <ul [ngClass]="{'hidden': this.userKitty.hideDetails}">
+        <li>Name : {{userKitty.name}}</li>
+        <li>Race : {{userKitty.race}}</li>
+        <li>Date of Birth : {{userKitty.birthDate}}</li>
+    </ul>
+</div>

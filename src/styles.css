@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+img {
+    width: 150px;
+    height: 200px
+}
+
+li {
+    list-style: none;
+}

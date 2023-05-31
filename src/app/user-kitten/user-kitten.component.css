@@ -1,0 +1,12 @@
+.hidden {
+    display: none
+}
+
+#userKittyCard {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+ul {
+    width: 250px;
+}

@@ -1,0 +1,27 @@
+app-user-kitten {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    width: 500px
+}
+
+button {
+    margin-bottom: 0.5rem;
+    width: 250px;
+}
+
+#kittyCard {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+#kittyDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px
+}
+
+.hidden {
+    display: none;
+}

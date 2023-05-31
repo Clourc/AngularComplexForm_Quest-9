@@ -1,0 +1,9 @@
+app-list-kitten {
+    display: flex;
+    justify-content: space-between;
+}
+
+#main-view {
+    display: flex;
+    flex-direction: column;
+}

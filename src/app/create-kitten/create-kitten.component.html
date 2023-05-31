@@ -1,0 +1,37 @@
+<form #createKitty="ngForm" (ngSubmit)="createKitty.valid && onSubmit()">
+    <fieldset>
+        <label for="kittyName">Name :</label>
+        <input type="text" id="kittyName" name="kittyName" [(ngModel)]="newKitty.name" #kittyName="ngModel" required>
+    </fieldset>
+    <div *ngIf="kittyName.errors && createKitty.submitted">
+        <span *ngIf="kittyName.errors?.['required']">Name required</span>
+    </div>
+
+    <fieldset>
+        <label for="kittyRace">Race :</label>
+        <input type="text" id="kittyRace" name="kittyRace" [(ngModel)]="newKitty.race" #kittyRace="ngModel" required>
+    </fieldset>
+    <div *ngIf="kittyRace.errors && createKitty.submitted">
+        <span *ngIf="kittyRace.errors?.['required']">Race required</span>
+    </div>
+
+    <fieldset>
+        <label for="kittyDateOfBirth">Date of Birth :</label>
+        <input type="date" id="kittyDateOfBirth" name="kittyDateOfBirth" [(ngModel)]="newKitty.birthDate" #kittyDateOfBirth="ngModel" required>
+    </fieldset>
+    <div *ngIf="kittyDateOfBirth.errors && createKitty.submitted">
+        <span *ngIf="kittyDateOfBirth.errors?.['required']">Date Of Birth required</span>
+    </div>
+
+    <fieldset>
+        <label for="kittyPhotoLink">Photo Link :</label>
+        <input type="url" id="kittyPhotoLink" name="kittyPhotoLink" [(ngModel)]="newKitty.photoLink" #kittyPhotoLink="ngModel" required>
+        <button type="button" (click)="randomImage()">Random image</button>
+        {{newKitty.photoLink}}
+    </fieldset>
+    <div *ngIf="kittyPhotoLink.errors && createKitty.submitted">
+        <span *ngIf="kittyPhotoLink.errors?.['required']">Photo link required</span>
+    </div>
+
+    <button type="submit" [ngClass]="{'submitReady' : createKitty.valid}" [disabled]="createKitty.invalid">Submit</button>
+</form>
